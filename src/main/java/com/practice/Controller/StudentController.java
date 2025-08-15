@@ -25,8 +25,14 @@ public class StudentController {
 	
 	/*@PathVariable is an annotation used to extract values from the URI path 
 	 * (URL segments) and bind them to method parameters in a controller.*/
-	@GetMapping("/student/{firstName}/{lastName}")
+	//@PathVariable("firstName") String fn,@PathVariable("lastName") String ln
+	@GetMapping("/studentPV/{firstName}/{lastName}")
 	public Student studentPathVaraiable(@PathVariable("firstName") String fn,@PathVariable("lastName") String ln) {
 		return new Student(fn,ln);
+	}
+	
+	@GetMapping("/studentRP")
+	public Student studentRequestParam(@RequestParam("fn") String firstName,@RequestParam("ln") String lastName) {
+		return new Student(firstName,lastName);
 	}
 }
