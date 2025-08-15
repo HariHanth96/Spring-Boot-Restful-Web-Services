@@ -1,0 +1,17 @@
+## What this Application Does:
+
+ -> Create Spring Boot Application | (Initial Commit) 
+ -> Create Simple Spring Boot REST API - Hello World | ()
+ -> Spring Boot REST API returns - Java Bean | ()
+ -> Spring Boot REST API returns - List | ()
+ -> Spring Boot REST API with Path Variable - @PathVariable | ()
+ -> Spring Boot REST API with Request Param - @RequestParam | ()
+ -> Spring Boot Project Architecture | ()
+ -> Create Custom Exception | ()
+ -> Create JPA Entity and Spring Data JPA repository | ()
+ -> Configure MYSQL Database | ()
+ -> Build Create Resource REST API - @PostMapping | ()
+ -> Build Get All Resource REST API - @GetMapping | ()
+ -> Build Get Single Resource Resource REST API - @GetMapping | ()
+ -> Build Update Resource REST API - @PutMapping | ()
+ -> Build Delete Resource REST API - @DeleteMapping | ()
