@@ -2,8 +2,7 @@ package com.practice.Controller;
 
 import java.util.*;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.practice.Model.Student;
 
 @RestController
@@ -22,5 +21,12 @@ public class StudentController {
 		students.add(new Student("Vengai","Mavan"));
 		students.add(new Student("Dinesh","Likna"));
 		return students;
+	}
+	
+	/*@PathVariable is an annotation used to extract values from the URI path 
+	 * (URL segments) and bind them to method parameters in a controller.*/
+	@GetMapping("/student/{firstName}/{lastName}")
+	public Student studentPathVaraiable(@PathVariable("firstName") String fn,@PathVariable("lastName") String ln) {
+		return new Student(fn,ln);
 	}
 }
