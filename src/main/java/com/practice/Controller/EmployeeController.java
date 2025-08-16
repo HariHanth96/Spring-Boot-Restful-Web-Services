@@ -8,8 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.practice.Model.Employee;
@@ -36,8 +38,13 @@ public class EmployeeController {
 		return empServe.findAllEmployee();
 	}
 	
-	@GetMapping("/show/{id}")
-	public ResponseEntity<Employee> getEmployee(@PathVariable(name="id") long id){
+	@GetMapping("/show") //@RequestParam url is give like this: /show?id=1&id2=2
+	public ResponseEntity<Employee> getEmployee(@RequestParam(name="id") long id){
 		return new ResponseEntity<Employee>(empServe.findEmployee(id),HttpStatus.OK);
+	}
+	
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Employee> updateEmployee(@PathVariable(name="id") long id,@RequestBody Employee employee){
+		return new ResponseEntity<Employee>(empServe.updateEmployee(employee,id),HttpStatus.ACCEPTED);
 	}
 }

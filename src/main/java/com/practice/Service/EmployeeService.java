@@ -1,7 +1,6 @@
 package com.practice.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.practice.Model.Employee;
 
@@ -11,4 +10,6 @@ public interface EmployeeService {
 	List<Employee> findAllEmployee();
 	
 	Employee findEmployee(long id);
+	
+	Employee updateEmployee(Employee employee,long id);
 }
